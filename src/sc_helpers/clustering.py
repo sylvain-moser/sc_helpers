@@ -6,7 +6,8 @@ from scipy.spatial.distance import jensenshannon
 from sklearn.metrics import silhouette_score,davies_bouldin_score,calinski_harabasz_score
 import harmonypy as hm
 import re
-
+import seaborn as sns
+import matplotlib.pyplot as plt 
 ## Functions for the gridsearch: 
 
 def compute_balance_score(clusters, conditions):
