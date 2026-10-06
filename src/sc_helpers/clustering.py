@@ -280,7 +280,10 @@ def show_clustering_results(adata,metrics_df,labels_dict,pca_harmonized_dict,n_c
             best_params=metrics_df.iloc[0,:]
             best_n=best_params["n_clusters"]
             best_params=metrics_df[metrics_df["n_clusters"]==best_n+n_clust_rank]
-            best_params=best_params.iloc[0,:]
+            try:
+                best_params=best_params.iloc[0,:]
+            except IndexError:
+                return "No results with this number of clusters"
             run_id=best_params["run_id"]
     print (f"run_id: {run_id}")
     # pre-process dataset according to clustering results
